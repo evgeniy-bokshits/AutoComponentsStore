@@ -1,0 +1,18 @@
+﻿@model AutoComponentsStore.Domain.Entities.Cart
+
+@{
+    ViewBag.Title = "Название и цена";   
+}
+
+<a href=@Url.Action("Index", "Cart", new {returnUrl = Request.Url.PathAndQuery})>
+    <b>Ваша корзина:</b>
+    @Model.Lines.Sum(x => x.Quantity) игр,
+    @Model.ComputeTotalValue().ToString("# руб")
+</a>
+
+@*<div class="navbar-right visible-xs">
+    <a href=@Url.Action("Index", "Cart", new { returnUrl = Request.Url.PathAndQuery })
+       class="btn btn-default navbar-btn">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+</div>*@

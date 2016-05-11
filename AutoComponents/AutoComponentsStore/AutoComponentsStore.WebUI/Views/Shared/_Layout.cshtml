@@ -1,0 +1,149 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+    <link href="~/Content/template/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+
+    <!-- Css animations  -->
+    @*<link href="~/Content/template/css/animate.css" rel="stylesheet">*@
+
+    
+    <title>@ViewBag.Title</title>
+    @*<style>
+        .navbar-right {
+            float: right !important;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+    </style>*@
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+</head>
+<body>
+<div id="All">
+    <header>
+        <div id="top">
+
+            <!-- *** TOP ***
+        _________________________________________________________ -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 contact">
+                        <p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+                        <p class="hidden-md hidden-lg">
+                            <a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a> <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                        </p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="social">
+                            <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                        </div>
+
+                        <div class="login">
+                            <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
+                            <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+            <!-- *** TOP END *** -->
+            <!-- *** NAVBAR ***
+            _________________________________________________________ -->
+            <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+                <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand home" href="index.html">
+                                <img src="~/Content/template/img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="~/Content/template/img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">AutoComponentsStore - магазин автозапчастей</span>
+                            </a>
+                            <div class="navbar-buttons">
+                                <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-align-justify"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="navbar-collapse collapse" id="navigation">
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Главная<b></b></a>
+                                </li>
+                                <li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог<b></b></a>
+                                </li>
+                                <li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">О Компании<b></b></a>
+                                </li>
+                                <li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Контакты<b></b></a>
+                                </li>
+                                <li class="dropdown use-yamm yamm-fw">
+                                        @Html.Action("Summary", "Cart")
+                                </li>
+                            </ul>
+                        </div>  
+                    </div>
+                 </div>
+               </div>
+    </header>
+
+    <div id="heading-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>AutoComponentsStore - магазин автозапчастей</h1>
+                </div>
+                <div class="col-md-5">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>Category with left sidebar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="row panel">
+            <div id="categories" class="col-xs-3">
+                @Html.Action("Menu", "Navigation")
+            </div>
+        </div>
+        @RenderBody()
+
+    </div>
+
+    <div class="container body-content">
+        <hr/>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My Diploma ASP.NET Application</p>
+        </footer>
+    </div>
+</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+    </script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

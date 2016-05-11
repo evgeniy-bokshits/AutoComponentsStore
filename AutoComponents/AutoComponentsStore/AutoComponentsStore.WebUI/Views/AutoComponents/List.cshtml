@@ -1,0 +1,15 @@
+﻿@using AutoComponentsStore.Domain.Entities
+@model AutoComponentsStore.WebUI.Models.AutoComponentsListViewModel
+
+@{
+    ViewBag.Title = "Товары";
+}
+
+@foreach (var p in @Model.Products)
+{
+    @Html.Partial("AutoComponentsSummary", p)
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>
